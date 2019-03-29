@@ -4,11 +4,35 @@ project(task1)
 
 set(CMAKE_CXX_STANDARD 14)
 
+## A
+
 add_subdirectory("A")
+
+## C
+
+set(codegen_impl
+        C/preparing.py
+)
+
+set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS
+        ${codegen_impl}
+        )
+
+execute_process(
+        COMMAND python3 preparing.py
+        -o ${CMAKE_BINARY_DIR}/generated C
+        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/C
+)
+
+file(GLOB_RECURSE ${generated_files}
+        ${CMAKE_BINARY_DIR}/generated C/index.h
+)
+
+## B
 
 set(SOURCES_LIST B/main.cpp)
 
-add_executable(task1 ${SOURCES_LIST})
+add_executable(task1 ${generated_files} ${SOURCES_LIST})
 
 target_link_libraries(task1 mylib)
 target_include_directories(task1 PRIVATE .)

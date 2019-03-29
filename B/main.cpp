@@ -8,4 +8,6 @@ int main()
     std::string url = "aba caba daba";
     UrlEncode(url);
     std::cerr << url << std::endl;
+
+    std::cerr << GetSomeNumber() << std::endl;
 }
