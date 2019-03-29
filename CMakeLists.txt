@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 
-project(task1)
+project(task2)
 
 set(CMAKE_CXX_STANDARD 14)
 
@@ -32,7 +32,7 @@ file(GLOB_RECURSE ${generated_files}
 
 set(SOURCES_LIST B/main.cpp)
 
-add_executable(task1 ${generated_files} ${SOURCES_LIST})
+add_executable(task2 ${generated_files} ${SOURCES_LIST})
 
-target_link_libraries(task1 mylib)
-target_include_directories(task1 PRIVATE .)
+target_link_libraries(task2 mylib)
+target_include_directories(task2 PRIVATE .)
