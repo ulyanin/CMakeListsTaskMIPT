@@ -4,6 +4,28 @@ CMakeLists task for MIPT DIHT cource
 ## Introduction
 Doxygen generation was found in https://github.com/yoyomatsu/DoxygenCmake/
 
+## make & install
+### make
+```bash
+mkdir build
+cd build
+cmake ..
+make
+```
+### make doc
+```bash
+make doxygen-task2
+make doxygen-mylib
+```
+
+### open doc
+```bash
+xdg-open ../doc/task2/html/index.html
+xdg-open ../doc/mylib/html/index.html
+
+```
+
+
 ## Structure
 CMakeLists.txt // core cmake file
 * A
@@ -22,23 +44,3 @@ CMakeLists.txt // core cmake file
   * Doxyfile.in // doxygen config 
   * doxygen.cmake // cmake staff
   * doxygen-script.cmake
-
-## make
-```bash
-mkdir build
-cd build
-cmake ..
-make
-```
-## make doc
-```bash
-make doxygen-task2
-make doxygen-mylib
-```
-
-## open doc
-```bash
-xdg-open ../doc/task2/html/index.html
-xdg-open ../doc/mylib/html/index.html
-
-```

@@ -12,6 +12,7 @@ endif ()
 function (add_doxygen targetname)
     # Doxygenないときは空関数
     if (NOT DOXYGEN_FOUND)
+        MESSAGE(WARNING "Please, install doxygen")
         return()
     endif ()
 
